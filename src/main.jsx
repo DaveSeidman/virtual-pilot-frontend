@@ -5,7 +5,7 @@ import App from './App.jsx'
 import './styles/index.scss'
 
 createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
+  <BrowserRouter basename='virtual-pilot-frontend'>
     <App />
   </BrowserRouter>
 )

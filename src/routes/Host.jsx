@@ -15,7 +15,7 @@ export default function Host() {
   const socketRef = useRef(null)
   const origin = typeof window !== 'undefined' ? window.location.origin : ''
   const base = import.meta.env.BASE_URL || '/'
-  const joinUrl = room ? `${import.meta.env.VITE_PUBLIC_ORIGIN}/room/${room}` : ''
+  const joinUrl = room ? `${import.meta.env.VITE_PUBLIC_ORIGIN}/virtual-pilot-frontend/room/${room}` : ''
 
   useEffect(() => {
     const s = io(SERVER_URL, { path: '/socket.io', transports: ['websocket'] })
