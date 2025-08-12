@@ -1,0 +1,27 @@
+{
+  "name": "virtual-pilot-frontend",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.114.6",
+    "@react-three/fiber": "^8.16.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-qr-code": "^2.0.15",
+    "react-router-dom": "^6.26.2",
+    "socket.io-client": "^4.8.1",
+    "three": "^0.160.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-basic-ssl": "^2.1.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "sass": "^1.77.8",
+    "vite": "^7.1.2"
+  }
+}

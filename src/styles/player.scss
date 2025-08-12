@@ -1,0 +1,14 @@
+.player .top {
+  display: flex; align-items: center; justify-content: space-between;
+}
+.player .badge {
+  background: #14161a; border: 1px solid #23252b; border-radius: 2.4vw; padding: 2vw 3vw; font-size: 4.2vw;
+}
+.player .room { color: var(--muted); font-size: 3.4vw; }
+.player .center {
+  display: flex; align-items: center; justify-content: center; height: 60vh;
+}
+@media (min-width: 768px) {
+  .player .badge { border-radius: 12px; font-size: 1.2rem; padding: 10px 14px; }
+  .player .room { font-size: 1rem; }
+}

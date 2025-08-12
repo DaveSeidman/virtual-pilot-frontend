@@ -1,0 +1,50 @@
+.host .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.host .room span { color: var(--accent); }
+.host .share {
+  display: flex;
+  gap: 6vw;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.host .url {
+  font-size: 3.6vw;
+  word-break: break-all;
+  padding: 2vw;
+  background: #14161a;
+  border: 1px solid #23252b;
+  border-radius: 2.4vw;
+}
+.host .qr {
+  padding: 2vw;
+  background: #14161a;
+  border: 1px solid #23252b;
+  border-radius: 2.4vw;
+}
+.host .content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4vw;
+}
+.scene { height: 54vh; min-height: 320px; background: #0f1116; border-radius: 2.4vw; overflow: hidden; }
+.players {
+  display: flex; flex-direction: column; gap: 3vw;
+}
+.player-row {
+  display: flex; align-items: center; gap: 3vw; padding: 2vw; background: #14161a; border: 1px solid #23252b; border-radius: 2.4vw;
+}
+.joystick { position: relative; width: 20vw; height: 20vw; min-width: 64px; min-height: 64px; }
+.joystick .label { position: absolute; left: 0; right: 0; bottom: -6vw; text-align: center; font-size: 3.6vw; color: var(--muted); }
+.hint { color: var(--muted); }
+
+@media (min-width: 900px) {
+  .host .content { grid-template-columns: 2fr 1fr; }
+  .host .url { font-size: 1rem; border-radius: 12px; padding: 12px; }
+  .host .qr { border-radius: 12px; }
+  .player-row { border-radius: 12px; }
+  .scene { border-radius: 12px; }
+  .joystick .label { bottom: -18px; font-size: 0.9rem; }
+}
