@@ -15,9 +15,11 @@ export default function Host() {
   const socketRef = useRef(null)
   const origin = typeof window !== 'undefined' ? window.location.origin : ''
   const base = import.meta.env.BASE_URL || '/'
+  const [localIp, setLocalIp] = useState('');
+  const port = 8080; // TODO: share with server
   const joinUrl = room ?
     import.meta.env.MODE === 'development'
-      ? `${import.meta.env.VITE_PUBLIC_ORIGIN}/virtual-pilot-frontend/room/${room}`
+      ? `https://${localIp}:${port}/virtual-pilot-frontend/room/${room}`
       : `https://daveseidman.github.io/virtual-pilot-frontend/room/${room}`
     : ''
 
@@ -26,8 +28,13 @@ export default function Host() {
     socketRef.current = s
     s.on('connect', () => {
       s.emit('handshake', { role: 'host' }, res => {
+        console.log('handshake', res);
         if (res && res.ok) setRoom(res.room)
       })
+    })
+    s.on('system:host-joined', (data) => {
+      console.log({ data })
+      setLocalIp(data.localIp);
     })
     s.on('player:joined', ({ playerId, name }) => {
       setPlayers(p => {

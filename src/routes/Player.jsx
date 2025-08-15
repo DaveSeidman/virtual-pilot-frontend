@@ -13,8 +13,6 @@ export default function Player() {
   const motionRef = useRef({ alpha: 0, beta: 0, gamma: 0 })
   const rafRef = useRef(0)
 
-
-
   useEffect(() => {
     const s = io(SERVER_URL, { transports: ['websocket'] })
     socketRef.current = s
